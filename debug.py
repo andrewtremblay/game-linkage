@@ -1,1 +1,1 @@
-hide_native_cursor = True
+hide_native_cursor = False #True

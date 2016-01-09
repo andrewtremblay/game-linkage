@@ -1,14 +1,15 @@
 import pygame
 import debug, res_io
+import game_globals #cursor size
 
 class Cursor(pygame.sprite.Sprite):
+
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         if debug.hide_native_cursor:
             pygame.mouse.set_visible(0)
         self.cursor_state = 0
-        rawimage, self.rect = res_io.load_image('cursor_hand.png')
-        self.image = pygame.transform.scale(rawimage, (30,30))
+        self.image, self.rect = res_io.load_image('cursor_hand.png', new_size=(15,15))
 
     def update(self):
         "move the fist based on the mouse position"
